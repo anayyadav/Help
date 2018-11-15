@@ -1,0 +1,41 @@
+# Kubernetes
+> It is an open source, portable platform for automating deploymnt, scalingand management of containerized workloads and application.
+> Kubernetes community is highly active 
+> It ie written in Go or Golang 
+
+
+# Components of Kubernetes
+we can divide Kubernetes in to two parts:
+                                    
+                                          KUBERNETES
+                                              |
+                                              |
+                        [---------------------|--------------------------]
+                        |                                                |
+                        |                                                | 
+                 KUBERNETES MASTER                                 KUBERNETES NODE
+                 |                                                        |
+                 |                                                        |   
+                 |-- Kube-controller manager                              |-- Kubelet
+                 |                                                        |
+                 |-- Kube-apiserver                                       |-- Kube-proxy
+                 |                                                      
+                 |-- Kube- Scheduler
+                 |
+                 |-- etcd(key value store)
+                 
+                 
+
+# Kubernetes Master:
+-> It is the central part of kubernetes
+-> It manags each and every nodes.
+-> It also ensures  that all the nodes are healthy or not, pods are scheduling on time etc.
+
+# Tasks perfromed by Kubernets Master 
+> Secheduling a pod 
+> Respondin to any cluster event
+> detecting Pods
+> Exposing API
+> Controlling and Provisioning 
+              
+              
