@@ -1,0 +1,5 @@
+
+Error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
+Cause of error: This error is because your docker dreamon is not yet started
+Solution: Run a command called 'sudo systemctl start docker'.
+To verify that it is working or not run 'docker images'
