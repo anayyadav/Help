@@ -1,0 +1,12 @@
+Error: no space left on device
+Cause: To check the reason this error run a command called "df -h", you will get the output as:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda2      150G  150G  760M 100% /             <--------- This is the cause of this error.
+devtmpfs        7.8G     0  7.8G   0% /dev
+tmpfs           7.8G     0  7.8G   0% /dev/shm
+tmpfs           7.8G  852M  7.0G  11% /run
+tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
+tmpfs           1.6G     0  1.6G   0% /run/user/1000
+
+Solution: you need to do house cleaning to resolve this issue. 
+To do that run a command called 'cd /; du -sxh *', it will tell you the exact memory used by each folder in your filesystem. And now you can clean that file or folder whihc is using lot of memory.
