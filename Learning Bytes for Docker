@@ -4,3 +4,32 @@
   > Fash development
   > Scalability 
   
+# Basics of YAML
+> Its a main language for creating and managing POD's in Kubernete.
+> It is used for holding system configuration details, meta-data and other settings.
+> It is considered as a superset of Json.
+> It's a markup language, which has a syntax
+> Use indentation(2 space) to define the scope of each block.
+> Each block entry begins with a dash and a space '- '
+> Three dashes '---' is an optional and is used to seprate the doc. with a stream.
+
+
+# Data structure of YAML
+The data structure of YAML can be represented as:
+> scalers: used for strings and number 
+> Mapping: also knon as hashs or dict
+> sequences: also known as array or list.
+
+# Commona command used for Docker swarm 
+> To init. a docker swarm at an IP address:
+    $ docker swarm init --advertise-addr <IP>
+> To check the nodes present:
+    $ docker node ls 
+> To create the service:
+    $ docker create service --name <service_name> <image_name>
+> To check the service:    
+    $ docker service ls 
+> To inspect the service:
+    $ docker inspect service <service_id>
+> To scale your service:
+    $ docker service scale <service_id>:<replica_number>
