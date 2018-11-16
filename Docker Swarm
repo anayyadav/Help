@@ -1,0 +1,37 @@
+# How to create Docker swarm
+> To creat a docker swarm you need to have at least 2 Vm one is for master and another for node or wroker.
+> To create a docker swarm execute following commands:
+  $ docker swarm init --advertise-addr <manager_IP>
+  NOTE: The --advertise-node to publish its address as <IP>
+> To add workers in swarm you will get a command called docker sawrm join --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+    <IP>:2377
+ 
+ > To check the current state of docker swarm run a command 'docker info'
+ > To check the information about the node run a command 'docker node ls'
+ 
+ 
+# Deploy a service to the swarm
+> we can deploy a service to the swarm.
+> To create a service, goto on manager machine and run a command $docker service create --name hello -p 80:80 <image_name> <command_to_execute>
+  NOTE: --name flag names the service as hello
+> To see the running service run a command 'docker service ls'
+
+
+# Inspect a service on swarm
+> After deploying a service we can check the details about services running in the swarm
+> To ceck the details run a command 'docker inspect service --pretty <SERVICE_ID>
+> We can alos check which node is running the service by using a command 'docker service ps <SERVICE_NAME>>
+
+
+# Scale your service in docker swarm
+> After deploying a service to a swarm, we can scalnumber of container in the service.
+> TO scale a service docker has a command 'docker service scale <SERVICE_NAME>=<NUMBER>
+> To see the updated task list run a command 'docker service ps <SERVICE-ID>
+
+
+# Drain a node on the docker swarm
+> Earlier we used to run all the node in running with ACTIVE availability. 
+> To plan a maintenance times, we can set a node to DRAIN availabilty.
+> DRAIN availability prevents a node from receiving new tasks from swam manager.
+> DRAIN availability only affects the node's ability to schedule swarm service workloads.
+> $ docker node update --availability drain worker1
