@@ -2,3 +2,6 @@ https://www.linuxnix.com/unlock-user-account-linux/
 
 
 https://www.learnitguide.net/2016/08/how-to-lock-and-unlock-user-account-linux.html
+
+
+cat /etc/passwd | cut -d : -f 1 | awk '{ system("passwd -S " $0) }'
