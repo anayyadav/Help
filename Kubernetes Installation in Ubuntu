@@ -1,0 +1,10 @@
+Pre-Installation Steps On Both Master & Slave (To Install Kubernetes):
+  Master:
+  $ sudo su
+  $ apt-get update
+  Turn Off Swap Space
+  Next, we have to turn off the swap space because Kubernetes will start throwing random errors otherwise.
+  After that you need to open the ‘fstab’ file and comment out the line which has mention of swap partition.
+  $ swapoff -a
+  $ nano /etc/fstab
+  edit the line start with UUID<sha> none swap 
