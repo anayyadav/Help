@@ -1,0 +1,6 @@
+step1: Use' git status --porcelain | sed s/^...// ' command 
+      output: you will get the file name which has merge conflicts 
+  
+steps2 : use git blame "file name ' to get the author deatils.
+
+
