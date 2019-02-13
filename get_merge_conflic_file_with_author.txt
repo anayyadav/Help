@@ -6,3 +6,33 @@ step1: Use' git status --porcelain | sed s/^...// ' command
 steps2 : use git blame "file name ' to get the author deatils.
 
 
+
+
+Python Script:
+
+
+import os
+
+def get_fileName(path):
+	os.chdir(path)
+	data = os.popen('git status --porcelain | sed s/^...// ').read()
+	return data.split('\n')
+
+def get_author_name(path):
+	file_name = get_fileName(path)
+	command = 'git blame'
+	for i in range(len(file_name)):
+		if not(len(file_name[i]) == 0):
+			output = os.popen(command+" "+str(file_name[i])).read()
+			print(output)
+			
+			
+			
+def main1():
+	path_of_dir = 'repo path'
+	get_author_name(path_of_dir)
+
+if __name__ == '__main__':
+	main1()
+      
+      
